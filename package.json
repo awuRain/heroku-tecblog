@@ -7,9 +7,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "pack": "webpack",
-    "push": "git commit -am 'modify' && git push heroku master",
     "pp": "webpack && git commit -am 'modify' && git push heroku master",
+    "ppp": "webpack && git commit -am 'modify' && git push heroku master && git push",
     "local": "webpack && heroku local",
     "start": "node index.js"
   },
