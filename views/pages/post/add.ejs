@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../../partials/nav.ejs %>
+  
+ 	<input id="title" style="display: block;">
+ 	<textarea id="content" style="display: block;"></textarea>
+	
+	<button id="addOnePost" style="display: block;">addOnePost</button>
+
+
+<script>
+  $('#addOnePost').on('click', function () {
+  	var title = $('#title').val();
+  	var content = $('#content').val();
+
+  	app.Manu.addOnePost({
+  		title: title,
+  		content: content
+  	});
+  });
+</script>
+
+</body>
+</html>

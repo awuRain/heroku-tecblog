@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../../partials/nav.ejs %>
+  
+  <div id="post-list" class="post-list"></div>
+
+<script>
+  app.Manu.find10Posts(function (res) {
+    $('#post-list').html(app.renderPostList(res));
+  });
+</script>
+
+</body>
+</html>

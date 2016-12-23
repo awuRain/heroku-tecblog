@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../../partials/nav.ejs %>
+  
+	<div id="post-detail" class="post-detail"></div>
+
+<script>
+	var id = "<%= id %>";
+	app.Manu.findPostById(id, function (res) {
+		$('#post-detail').html(app.renderPostDetail(res[0]));
+	})
+</script>
+
+</body>
+</html>
