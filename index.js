@@ -1,5 +1,11 @@
+var dao = require('dao');
 var express = require('express');
 var app = express();
+
+var doc = {
+	title : 'title01', 
+	content : 'content01'
+}
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -14,6 +20,10 @@ app.get('/', function(request, response) {
 });
 
 app.get('/post/list', function(request, response) {
+    // var daoInstance = new dao('post');
+    // daoInstance.add(doc, function (res) {
+    //     console.log(res);
+    // }).close();
   	response.render('pages/post/list');
 });
 

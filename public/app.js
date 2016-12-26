@@ -13,36 +13,29 @@ _.extend(app.prototype, {
 
 	init: function () {
 		var _this = this;
+		// _this._bind();
 		setTimeout(function () {
 			_this._bind();
 		}, 500);
 	},
+
 	_bind: function () {
-		$('body').on('click', '.add-btn', function () {
-			Manu.addOnePost({
-				'title': 'qwe',
-				'content': 'sss'
-			})
-		}).on('click', '.find-btn', function () {
-			Manu.find10Posts(function (res) {
-				console.log(res);
-			});
-		}).on('click', '.2md-btn', function () {
-			var text = '#hello';
-			var converter = new showdown.Converter();
-			console.log(converter.makeHtml(text));
-		}).on('click', '.query-btn', function () {
-			var condition = 'title == 1337';
-			Manu.queryPost(condition, function (res) {
-				console.log(res);
-			});
+		$('body').on('dataLoading', function () {
+			console.log(2);
+			$('.loader').css('display', 'block');
+		}).on('dataLoaded', function () {
+			console.log(1);
+			$('.loader').css('display', 'none');
 		});
 	},
+
 	markDonw: function (text) {
 		var converter = new showdown.Converter();
 		return converter.makeHtml(text);
 	},
+
 	Manu: Manu
+	
 }, Views.prototype);
 
 var appInstance = new app();

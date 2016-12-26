@@ -17,7 +17,7 @@ function Views () {
 }
 
 _.extend(Views.prototype, {
-	renderPostList: function (postList) {
+	renderPostList: function (postList, $target) {
 		var tpl = '' + 
 			'<ul>'+
 				'{@each postList as item, index}' +
@@ -30,20 +30,23 @@ _.extend(Views.prototype, {
 					'</li>' +
 				'{@/each}' +
 			'</ul>';
-		return Juicer(tpl, {
+
+		$target.html(Juicer(tpl, {
 			postList: postList
-		});
+		}));
 	},
-	renderPostDetail: function (post) {
+
+	renderPostDetail: function (post, $target) {
 		var tpl = '' +
 			'<h1>${post.data.title}</h1>' +
 			'<span class="item-info">${post.info.updatedAt|time}</span>' +
 			'<div class="markdown-container">' +
 				'$${post.data.content|markdown}' +
-			'</div>'
-		return Juicer(tpl, {
+			'</div>';
+
+		$target.html(Juicer(tpl, {
 			post: post
-		});
+		}));
 	}
 });
 

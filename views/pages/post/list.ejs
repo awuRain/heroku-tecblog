@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../../partials/header.ejs %>
+  	<% include ../../partials/header.ejs %>
 </head>
 
 <body>
-
-  <% include ../../partials/nav.ejs %>
-  
-  <div id="post-list" class="post-list"></div>
-
-<script>
-  app.Manu.find10Posts(function (res) {
-    $('#post-list').html(app.renderPostList(res));
-  });
-</script>
-
+  	<% include ../../partials/nav.ejs %>
+  	<% include ../../partials/loader.ejs %>
+  	<div id="post-list" class="post-list"></div>
+	<script>
+	  	app.Manu.find10Posts(function (res) {
+	  		app.renderPostList(res, $('#post-list'));
+	  	});
+	</script>
 </body>
 </html>

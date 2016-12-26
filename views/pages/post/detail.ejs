@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../../partials/header.ejs %>
+  	<% include ../../partials/header.ejs %>
 </head>
 
 <body>
-
-  <% include ../../partials/nav.ejs %>
-  
+  	<% include ../../partials/nav.ejs %>
+  	<% include ../../partials/loader.ejs %>
 	<div id="post-detail" class="post-detail"></div>
-
-<script>
-	var id = "<%= id %>";
-	app.Manu.findPostById(id, function (res) {
-		$('#post-detail').html(app.renderPostDetail(res[0]));
-	})
-</script>
-
+	<script>
+		var id = "<%= id %>";
+		app.Manu.findPostById(id, function (res) {
+			app.renderPostDetail(res[0], $('#post-detail'));
+		})
+	</script>
 </body>
 </html>

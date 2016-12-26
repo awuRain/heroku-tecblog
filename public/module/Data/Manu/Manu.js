@@ -25,9 +25,15 @@ _.extend(Manu.prototype, {
 		postDao.add(obj);
 	},
 	find10Posts: function (callback) {
+
+		var _this = this;
 		var postDao = this.postDao;
-		postDao.findAll(function (res) {
-			callback(res);
+
+		this._fakeDelay(function () {
+			postDao.findAll(function (res) {
+				_this._loaded();
+				callback(res);
+			});
 		});
 	},
 	queryPost: function (condition, callback) {
@@ -40,7 +46,23 @@ _.extend(Manu.prototype, {
 		this.queryPost('objectId == ' + id, function (res) {
 			callback(res);
 		})
+	},
+
+	_loading: function () {
+		$('.loader').css('display', 'block');
+	},
+
+	_loaded: function () {
+		$('.loader').css('display', 'none');
+	},
+
+	_fakeDelay: function (callback) {
+		this._loading();
+		setTimeout(function () {
+			callback();
+		}, 1000);
 	}
 });
 
 module.exports = new Manu();
+
