@@ -29,11 +29,14 @@ _.extend(Manu.prototype, {
 		var _this = this;
 		var postDao = this.postDao;
 
-		this._fakeDelay(function () {
-			postDao.findAll(function (res) {
-				_this._loaded();
-				callback(res);
-			});
+		// this._fakeDelay(function () {
+		// 	postDao.findAll(function (res) {
+		// 		_this._loaded();
+		// 		callback(res);
+		// 	});
+		// });
+		postDao.findAll(function (res) {
+			callback(res);
 		});
 	},
 	queryPost: function (condition, callback) {

@@ -7,7 +7,9 @@
 <body>
   	<% include ../../partials/nav.ejs %>
   	<% include ../../partials/loader.ejs %>
-	<div id="post-detail" class="post-detail"></div>
+  	<div class="content-container">
+  		<div id="post-detail" class="post-detail"></div>
+  	</div>
 	<script>
 		var id = "<%= id %>";
 		app.Manu.findPostById(id, function (res) {

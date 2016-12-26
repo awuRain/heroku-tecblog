@@ -100,13 +100,13 @@ app.use(function *() {
     this.response; // is a koa Response
 })
 </pre>
-##### ctx.req : Node request
-##### ctx.res : Node response 
-##### ctx.requset : Koa requset
-##### ctx.response : Koa response
-##### ctx.app : 对应用实例的引用
-##### ctx.cookies.get(name, [options]) : 获取cookie中名为name的值
-##### ctx.cookies.set(name, value, [options]) : 设置cookie中名为name的值  
++ ctx.req : Node request
++ ctx.res : Node response 
++ ctx.requset : Koa requset
++ ctx.response : Koa response
++ ctx.app : 对应用实例的引用
++ ctx.cookies.get(name, [options]) : 获取cookie中名为name的值
++ ctx.cookies.set(name, value, [options]) : 设置cookie中名为name的值  
 + signed: 是否要做签名  
 + expires: cookie 有效期时间
 + path: cookie 的路径，默认为 /'
@@ -114,7 +114,7 @@ app.use(function *() {
 + secure: false 表示 cookie 通过 HTTP 协议发送，true 表示 cookie 通过 HTTPS 发送。
 + httpOnly: true 表示 cookie 只能通过 HTTP 协议发送
 
-##### ctx.throw(msg, [status])
++ ctx.throw(msg, [status])
 <pre>
     ctx.throw('name required', 400);
 </pre>
@@ -126,11 +126,11 @@ app.use(function *() {
 </pre>
 
 #### Request
-##### req.header : 请求头Object
-##### req.method : 请求方法
-##### req.length : 以数字的形式返回 request 的内容长度(Content-Length)，或者返回 undefined
-##### req.url : 获得请求url地址
-##### req.originalUrl : 获取请求原始地址
-##### req.path : 获取请求路径名
-##### req.querystring : 获取查询参数字符串(url中?后面的部分)，不包含?
-##### req.search : 获取查询参数字符串，包含
++ req.header : 请求头Object
++ req.method : 请求方法
++ req.length : 以数字的形式返回 request 的内容长度(Content-Length)，或者返回 undefined
++ req.url : 获得请求url地址
++ req.originalUrl : 获取请求原始地址
++ req.path : 获取请求路径名
++ req.querystring : 获取查询参数字符串(url中?后面的部分)，不包含?
++ req.search : 获取查询参数字符串，包含

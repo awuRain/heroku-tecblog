@@ -19,6 +19,10 @@ app.get('/', function(request, response) {
   	response.render('pages/index');
 });
 
+app.get('/about/me', function(request, response) {
+    response.render('pages/about/me');
+});
+
 app.get('/post/list', function(request, response) {
     // var daoInstance = new dao('post');
     // daoInstance.add(doc, function (res) {

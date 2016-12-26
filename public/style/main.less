@@ -2,7 +2,7 @@
 @import './post.less';
 @import './markdown.less';
 @import './common.less';
-@import './loader.css';
+@import './loader.less';
 
 @nav-bar-height: 50px;
 @nav-bar-width: @main-width + 100;
@@ -10,6 +10,7 @@
 .nav-bar {
   position: fixed;
   top: 0;
+  z-index: 999;
   width: 100%;
   height: @nav-bar-height;
   background: @main-color-01;
@@ -30,5 +31,23 @@
     &:hover {
       color: #fff;
     }
+  }
+}
+
+.content-container {
+  padding: @nav-bar-height 0 @nav-bar-height+30;
+}
+
+.about-me-bg {
+  background-image: url('../image/me.png');
+  background-size: 100% auto;
+  width: 180px;
+  position: fixed;
+  bottom: 0;
+  left: 100px;
+  &:after {
+    content: '';
+    display: inline-block;
+    padding-bottom: 100%;
   }
 }

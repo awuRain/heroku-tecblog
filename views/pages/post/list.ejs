@@ -7,7 +7,9 @@
 <body>
   	<% include ../../partials/nav.ejs %>
   	<% include ../../partials/loader.ejs %>
-  	<div id="post-list" class="post-list"></div>
+  	<div class="content-container">
+  		<div id="post-list" class="post-list"></div>
+  	</div>
 	<script>
 	  	app.Manu.find10Posts(function (res) {
 	  		app.renderPostList(res, $('#post-list'));

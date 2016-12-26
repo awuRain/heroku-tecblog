@@ -1,5 +1,7 @@
 @import 'common.less';
 
+@post-gap: 50px;
+
 .text-gap {
 	margin-top: 8px;
 }
@@ -7,14 +9,13 @@
 .post-list {
 	width: @main-width;
 	.block-center;
-	margin-top: 80px;
 	.post-item {
-		margin-top: 50px;
+		margin-top: @post-gap;
 		.item-header {
 			h1 {
-				color: #36c;
+				color: @sub-color-01;
 				&:hover {
-					color: #5d82ca;
+					color: softlight(@sub-color-01, #fff);
 					text-decoration: none;
 				}
 			}
@@ -37,7 +38,7 @@
 .post-detail {
 	width: @main-width;
 	.block-center;
-	margin-top: 80px;
+	margin-top: @post-gap;
 	.item-info {
 		display: block;
 		.text-gap;
