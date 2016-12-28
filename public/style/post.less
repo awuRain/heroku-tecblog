@@ -12,6 +12,7 @@
 	.post-item {
 		margin-top: @post-gap;
 		.item-header {
+			position: relative;
 			h1 {
 				color: @main-color-02;
 				&:hover {
@@ -20,11 +21,30 @@
 				}
 			}
 		}
-		.item-info {
+		.item-time {
 			display: block;
 			.text-gap;
 			font-size: 12px;
 			color: #999;
+		}
+		.item-info {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			opacity: 1;
+			&.hide {
+				opacity: 0;
+			}
+		}
+		.info-type {
+			display: inline-block;
+			height: 100%;
+			width: 100px;
+			text-align: center;
+			background-color: #f2e24d;
+		}
+		.info-keyword {
+			margin: 0 5px;
 		}
 		.item-content {
 			.text-gap;

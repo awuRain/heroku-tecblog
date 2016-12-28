@@ -21,12 +21,18 @@ _.extend(app.prototype, {
 
 	_bind: function () {
 		$('body').on('dataLoading', function () {
-			console.log(2);
 			$('.loader').css('display', 'block');
 		}).on('dataLoaded', function () {
-			console.log(1);
 			$('.loader').css('display', 'none');
 		});
+
+		$('body').on('mouseover', '.item-header', function (e) {
+			var dom = $(e.currentTarget);
+			dom.find('.item-info').removeClass('hide');
+		}).on('mouseout', '.item-header', function (e) {
+			var dom = $(e.currentTarget);
+			dom.find('.item-info').addClass('hide');
+		})
 	},
 
 	markDonw: function (text) {

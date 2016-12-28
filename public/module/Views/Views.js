@@ -12,6 +12,14 @@ Juicer.register('markdown', function (data) {
 	return converter.makeHtml(data)
 });
 
+Juicer.register('str2spanArr', function (data) {
+	var _res = '';
+	_.map(data.split(' '), function (val) {
+		_res += '<span class="info-keyword">'+ val +'</span>'
+	});
+	return _res
+});
+
 function Views () {
 	this.init();
 }
@@ -24,7 +32,11 @@ _.extend(Views.prototype, {
 					'<li class="post-item">'+
 						'<div class="item-header">'+
 							'<a href="/post/detail?id=${item.info.id}"><h1>${item.data.title}</h1></a>'+
-							'<span class="item-info">${item.info.updatedAt|time}</span>' +
+							'<span class="item-time">${item.info.updatedAt|time}</span>' +
+							'<div class="item-info hide">'+
+								'<span class="info-type">${item.data.type}</span>' +
+								'$${item.data.keyword|str2spanArr}' +
+							'</div>'+
 						'</div>' +
 						'<div class="item-content">$${item.data.content|markdown}</div>' +
 					'</li>' +
