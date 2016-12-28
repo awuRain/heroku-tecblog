@@ -7,12 +7,18 @@
 @nav-bar-height: 50px;
 @nav-bar-width: @main-width + 100;
 
+@logo-left: 100px;
+
 .logo {
+  @width: 20px;
   display: inline-block;
-  position: absolute;left: 50px;
-  height: @nav-bar-height;
-  width: @nav-bar-height*3/4;
+  position: absolute;
+  left: @logo-left;
+  width: @width;
   background-image: url('../image/logo.png');
+  background-size: cover;
+  .beam(4, 3);
+  .mid-vertical-absolute(@width*4/3);
 }
 
 .nav-bar {
@@ -23,17 +29,26 @@
   height: @nav-bar-height;
   background: @main-color-01;
   color: #fff;
+  .nav-container {
+    width: @nav-bar-width+200;
+    position: relative;
+    .block-center;
+  }
   ul {
-  	width: @nav-bar-width;
-  	.block-center;
+    margin-left: 150px;
+  	// .block-center;
     .clear;
   }
   li {
+    transition: all .2s;
   	height: @nav-bar-height;
   	line-height: @nav-bar-height;
   	padding: 0 30px;
   	display: inline-block;
   	float: left;
+    &:hover {
+      background-color: #5a43e7;
+    }
   }
   a {
     display: inline-block;
