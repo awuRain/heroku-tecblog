@@ -2,7 +2,12 @@
 
 @main-color-01: #422bd0;
 @main-color-02: #44a;
-@sub-color-01: #f36700;
+
+@sub-color-01: #f2e24d;
+
+@text-color-01: #555;
+@text-color-02: #777;
+@text-color-03: #999;
 
 .block-center {
 	margin: 0 auto;
@@ -11,7 +16,7 @@
 .clear {
 	&:after {
 		content: '';
-		display: inline-block;
+		display: block;
 		clear: both;
 	}
 }
@@ -19,7 +24,7 @@
 .beam(@height, @width) {
 	&:after {
 		content: '';
-		display: inline-block;
+		display: block;
 		width: 100%;
 		padding-bottom: @height/@width*100%;
 	}
@@ -28,4 +33,13 @@
 .mid-vertical-absolute(@height) {
 	top: 50%;
 	margin-top: -@height/2;
+}
+
+.icon-github {
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	background-image: url('../image/github.png');
+	background-size: cover;
+	.beam(1, 1);
 }

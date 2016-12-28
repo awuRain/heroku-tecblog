@@ -25,13 +25,14 @@
 			display: block;
 			.text-gap;
 			font-size: 12px;
-			color: #999;
+			color: @text-color-03;
 		}
 		.item-info {
 			position: absolute;
 			right: 0;
 			bottom: 0;
 			opacity: 1;
+			color: @text-color-01;
 			&.hide {
 				opacity: 0;
 			}
@@ -41,7 +42,7 @@
 			height: 100%;
 			width: 100px;
 			text-align: center;
-			background-color: #f2e24d;
+			background-color: @sub-color-01;
 		}
 		.info-keyword {
 			margin: 0 5px;
@@ -50,7 +51,7 @@
 			.text-gap;
 			line-height: 24px;
 			font-size: 15px;
-			color: #777;
+			color: @text-color-02;
 			max-height: 200px;
 			overflow: hidden;
 		}
@@ -65,6 +66,6 @@
 		display: block;
 		.text-gap;
 		font-size: 12px;
-		color: #999;
+		color: @text-color-03;
 	}
 }
