@@ -7,15 +7,21 @@
 <body>
     <input id="title" style="display: block;">
     <textarea id="content" style="display: block;"></textarea>
+    <input id="type" style="display: block;">
+    <input id="keyword" style="display: block;">
 	  <button id="addOnePost" style="display: block;">addOnePost</button>
     <script>
         $('#addOnePost').on('click', function () {
       	    var title = $('#title').val();
       	    var content = $('#content').val();
+            var type = $('#type').val();
+            var keyword = $('#keyword').val();
 
       	    app.Manu.addOnePost({
       		      title: title,
-      		      content: content
+      		      content: content,
+                type: type,
+                keyword: keyword
       	    });
         });
     </script>
