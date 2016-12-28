@@ -5,24 +5,20 @@
 @import './loader.less';
 
 @nav-bar-height: 50px;
-@nav-bar-width: @main-width + 100;
-
-@logo-left: 100px;
+@nav-bar-width: @main-width;
 
 * {
   transition: all .2s;
 }
 
 .logo {
-  @width: 20px;
+  @width: 36px;
   display: inline-block;
-  position: absolute;
-  left: @logo-left;
+  margin-right: 50px;
   width: @width;
   background-image: url('../image/logo.png');
   background-size: cover;
   .beam(4, 3);
-  .mid-vertical-absolute(@width*4/3);
 }
 
 .nav-bar {
@@ -39,14 +35,13 @@
     .block-center;
   }
   .navs {
-    margin-left: 150px;
     display: inline-block;
-  	// .block-center;
+    margin-left: -30px;
     .clear;
   }
   .others {
     float: right;
-    margin-right: 120px;
+    margin-right: -30px;
     a {
       line-height: @nav-bar-height - 5;
     }
@@ -56,14 +51,14 @@
     padding: 0 30px;
     line-height: @nav-bar-height;
     color: #fff;
+    &:hover {
+      background-color: @main-color-03;
+    }
   }
   li {
   	height: @nav-bar-height;
   	display: inline-block;
   	float: left;
-    &:hover {
-      background-color: @main-color-03;
-    }
   }
 }
 
